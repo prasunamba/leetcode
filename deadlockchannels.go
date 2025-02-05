@@ -1,0 +1,34 @@
+// simple deadlock
+package main
+
+import (
+	"fmt"
+	//"sync"
+)
+
+// causes deadlock
+/* func main() {
+
+c:=make(chan int) // unbuffered channel
+
+c<-32
+value := <-c
+
+fmt.Println("valeu",value)
+
+
+} */
+
+// no deadlock
+func deadlockc() {
+
+	c := make(chan int) // unbuffered channel
+
+	go func() {
+
+		c <- 42
+	}()
+	value := <-c
+	fmt.Println("valeu", value)
+
+}

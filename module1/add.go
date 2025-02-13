@@ -1,5 +1,7 @@
 package module1
 
-func Add(a, b int) int {
-	return a + b
+import "fmt"
+
+func Add(a, b int) {
+	fmt.Printf("sum of %d  and %d is %d \n ", a, b, a+b)
 }

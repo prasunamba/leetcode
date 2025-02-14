@@ -5,6 +5,6 @@ import (
 )
 
 func main() {
-	module1.Fib(10)
+	module1.Factorial(2)
 
 }

@@ -1,13 +1,33 @@
 package module1
 
-// func BubbleSort() []int {
-// 	list := []int{12, 32, 1, 45, -1, -23}
-// 	for i := 0; i < len(list); i++ {
-// 		for j := 0; j < len(list)-1-i; j++ {
-// 			if list[j] > list[j+1] {
-// 				list[j], list[j+1] = list[j+1], list[j]
-// 			}
-// 		}
-// 	}
-// 	return list
-// }
+func BubbleSort(list []int) []int {
+	for i := 0; i < len(list); i++ {
+		for j := 0; j < len(list)-1-i; j++ { // at the end of ith iteration  the ith  largest element will go to last of the array
+			if list[j] > list[j+1] {
+				list[j], list[j+1] = list[j+1], list[j]
+			}
+		}
+	}
+	return list
+}
+
+/* func main() {
+	var num int
+	var choice string
+	list := []int{}
+	for {
+		fmt.Println("Enter a number : ")
+		fmt.Scan(&num)
+		list = append(list, num)
+		fmt.Println(list)
+		fmt.Println(module1.BubbleSort(list))
+		fmt.Println("DO you want to continue(y/n)  : ")
+		fmt.Scan(&choice)
+		if strings.ToLower(choice) == "n" {
+			fmt.Println("exiting the program ")
+			break
+		}
+
+	}
+
+} */

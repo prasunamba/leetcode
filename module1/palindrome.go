@@ -4,12 +4,12 @@ import "fmt"
 
 func palindrome() {
 	name := "abckba"
-	for i, value := range name {
-		fmt.Println(value, rune(name[len(name)-i-1]))
-		if value != rune(name[len(name)-i-1]) {
-			fmt.Println("not a palindrome ")
-			return
+	runes := []rune(name)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+
+		if runes[i] != runes[j] {
+			fmt.Println("not a palindrome")
 		}
+
 	}
-	fmt.Println("a palindrome ")
 }

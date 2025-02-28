@@ -1,7 +1,7 @@
 package module1
 
 func BubbleSort(list []int) []int {
-	for i := 0; i < len(list); i++ {
+	for i := 0; i < len(list)-1; i++ {
 		for j := 0; j < len(list)-1-i; j++ { // at the end of ith iteration  the ith  largest element will go to last of the array
 			if list[j] > list[j+1] {
 				list[j], list[j+1] = list[j+1], list[j]
@@ -10,6 +10,22 @@ func BubbleSort(list []int) []int {
 	}
 	return list
 }
+
+/* func OptimizedBsort(slice []int) {
+	n := len(slice)
+	for i := 0; i < n-1; i++ {
+		swapped := false
+		for j := 0; j < n-i-1; j++ {
+			if slice[j] > slice[j+1] {
+				slice[j], slice[j+1] = slice[j+1], slice[j]
+				swapped = true
+			}
+		}
+		if !swapped { // If no swaps in this pass, stop early
+			break
+		}
+	}
+} */
 
 /* func main() {
 	var num int

@@ -1,18 +1,21 @@
 package module1
 
-import "fmt"
-
-func ReverseString(name string) {
-	nam := []rune(name) // convert string to slice of runes
-	for i := 0; i < len(nam)/2; i++ {
-		nam[i], nam[len(nam)-i-1] = nam[len(name)-i-1], nam[i]
+func Reversestring() {
+	name := "hello i am ok"
+	words := strings.Fields(name)
+	for i, word := range words {
+		words[i] = reverse(word)
 	}
-	fmt.Println(string(nam))
+	result := strings.Join(words, " ")
+	fmt.Println("", result
+)
+
 }
-
-// 0 1 2
-// D G P
-
-// i:=0  D,P=P,D      PGD
-// i=1   G,G=G,G      PGD
-// i=2   P,
+func reverse(name string) string {
+	runeslice := []rune(name)
+	// namespace := strings.Fields(name)
+	for i, j := 0, len(runeslice)-1; i < j; i, j = i+1, j-1 {
+		runeslice[i], runeslice[j] = runeslice[j], runeslice[i]
+	}
+	return string(runeslice)
+}

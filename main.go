@@ -6,30 +6,10 @@ import (
 )
 
 func main() {
-	intervals := [][]int{
-		{1, 3}, {2, 6}, {8, 10}, {15, 18},
-	}
-	sort.Slice(intervals, func(i, j int) bool {
-		return intervals[i][0] < intervals[j][0]
-	})
-	var result [][]int
-	result = append(result, intervals[0])
-	last := result[len(result)-1]
-	for _, num := range intervals[1:] {
-		if last[1] > num[0] {
-			last[1] = max(num[1], last[1])
-
-		} else {
-			result = append(result, num)
-		}
-	}
-
-	fmt.Println("", intervals, "\n", result)
-
-}
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
+	slice1 := []int{2, 1, 3, 4, 6, 5}
+	/* sort.Slice(slice1, func(i, j int) bool {
+		return slice1[i] < slice1[j]
+	}) */
+	sort.Sort(sort.Reverse(sort.IntSlice(slice1)))
+	fmt.Println("", slice1)
 }

@@ -18,3 +18,16 @@ func RemoveDuplicates() {
 	fmt.Println("map", map1)
 	fmt.Println("result", result)
 }
+
+func Mapremoveduplicates() {
+	list1 := []int{2, 4, 1, 5, 2, 3, 2, 4, 1}
+	map1 := make(map[int]bool)
+	var result []int
+	for _, num := range list1 {
+		if !map1[num] {
+			map1[num] = true
+			result = append(result, num)
+		}
+	}
+	fmt.Println("", result)
+}

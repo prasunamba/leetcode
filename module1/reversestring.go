@@ -1,5 +1,10 @@
 package module1
 
+import (
+	"fmt"
+	"strings"
+)
+
 func Reversestring() {
 	name := "hello i am ok"
 	words := strings.Fields(name)
@@ -7,8 +12,7 @@ func Reversestring() {
 		words[i] = reverse(word)
 	}
 	result := strings.Join(words, " ")
-	fmt.Println("", result
-)
+	fmt.Println("", result)
 
 }
 func reverse(name string) string {

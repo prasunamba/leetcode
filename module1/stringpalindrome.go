@@ -9,7 +9,7 @@ func isPalindrome(name string) bool {
 	if name == "" {
 		return true
 	}
-	name = strings.TrimSpace(name)
+	name = strings.ReplaceAll(name, " ", "")
 	name = strings.ToLower(name)
 	var newname []rune
 	for _, char := range name {

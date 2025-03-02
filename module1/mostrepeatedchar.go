@@ -7,7 +7,7 @@ import (
 
 func Mostrepeatedchar() {
 	name := "banan"
-	name = strings.TrimSpace(name)
+	name = strings.ReplaceAll(name, " ", "")
 	frequency := make(map[rune]int)
 	maxcount := 0
 	for _, char := range name {

@@ -1,14 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"golang/module1"
 )
 
-type name struct {
-	id  int
-	nam string
-}
-
 func main() {
-	module1.Interviewsolution2()
+	defer fmt.Println("main exit")
+	module1.CharFrequencyOptimized()
 }

@@ -16,3 +16,10 @@ func Swap() {
 	a, b, c = b, c, a
 	fmt.Println("after ", a, b, c)
 }
+func Swap2() {
+	a, b := 2, 3
+	a = a + b
+	b = a - b
+	a = a - b
+	fmt.Println("a,b", a, b)
+}

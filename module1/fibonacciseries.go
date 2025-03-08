@@ -12,7 +12,7 @@ func FibonacciSeries(num int) int {
 
 }
 func Fib(num int) {
-	for i := 0; i < num; i++ {
+	for i := range num {
 		fmt.Printf("%d ", FibonacciSeries(i))
 	}
 }

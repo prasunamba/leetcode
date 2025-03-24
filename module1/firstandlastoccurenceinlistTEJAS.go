@@ -22,8 +22,8 @@ func Tejasquestion() {
 }
 
 func Interviewsolution1() {
-	list := []int{3, 1, 2, 5, 12, 9, 45, 2, 3, 1, 2, 4, 5, 2}
-	target := 2
+	list := []int{5, 7, 7, 8, 8, 10}
+	target := 8
 
 	first, last := -1, -1
 	for index, value := range list {
@@ -42,21 +42,67 @@ func Interviewsolution1() {
 	}
 
 }
-func Interviewsolution2() {
-	list := []int{3, 1, 2, 5, 12, 9, 45, 2, 3, 1, 2, 4, 5, 2}
-	target := 2
-	setfirst, setlast := false, false
-	first, last := -1, -1
-	for i, j := 0, len(list)-1; i < j; i, j = i+1, j-1 {
-		if list[i] == target || list[j] == target {
-			if first == -1 && !setfirst {
-				first = i
+func maxm(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+func minm(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+func Interviewsolution2() []int {
+	nums := []int{5, 7, 7, 8, 8, 10}
+	target := 8
+	firstindex := -1
+	lastindex := -1
+	// lastflag := false
+	// firstflag := false
+	for i, j := 0, len(nums)-1; i <= j; i, j = i+1, j-1 {
+		fmt.Println("", i, nums[i], j, nums[j], firstindex, lastindex)
+		if target == nums[i] {
+			if firstindex == -1 {
+				firstindex = i
+				// firstflag = true
+				fmt.Println("i", firstindex)
+			} else {
+				firstindex = minm(i, firstindex)
 			}
-			if last == -1 && !setlast {
-				last = j
+			if lastindex == -1 {
+				lastindex = i
+			} else if i > lastindex {
+				lastindex = maxm(i, lastindex)
+				fmt.Println("i last", lastindex)
+			}
+
+		}
+		if target == nums[j] {
+			if lastindex == -1 {
+				lastindex = j
+				// lastflag = true
+				fmt.Println("j", lastindex)
+			} else {
+				lastindex = maxm(j, lastindex)
+			}
+			if firstindex == -1 {
+				fmt.Println("j -1", j)
+				firstindex = j
+			} else if j < firstindex {
+				firstindex = minm(j, firstindex)
+				fmt.Println("j first", firstindex)
 			}
 		}
 	}
-	fmt.Println("", first, last)
+	if firstindex == -1 || lastindex == -1 {
+		if firstindex == -1 {
+			firstindex = maxm(firstindex, lastindex)
+		} else {
+			lastindex = maxm(firstindex, lastindex)
+		}
+	}
+	return []int{firstindex, lastindex}
 
 }

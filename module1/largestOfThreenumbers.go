@@ -12,7 +12,7 @@ func LargestOfThreeNum(a, b, c int) {
 	}
 }
 
-/* func LargestOfThreeNum(a, b, c int) {
+func OptimizedLargestOfThreeNum(a, b, c int) {
 	largest := a
 	if b > largest {
 		largest = b
@@ -21,4 +21,4 @@ func LargestOfThreeNum(a, b, c int) {
 		largest = c
 	}
 	fmt.Printf("%d is largest \n", largest)
-} */
+}

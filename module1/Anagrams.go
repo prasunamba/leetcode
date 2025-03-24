@@ -2,6 +2,7 @@ package module1
 
 import (
 	"fmt"
+	"slices"
 	"sort"
 	"strings"
 )
@@ -13,7 +14,7 @@ func Anagrams() {
 	name2 = strings.ToLower(name2)
 	name1slice := []rune(name1)
 	name2slice := []rune(name2)
-	sort.Slice(name1slice, func(i, j int) bool { return name1slice[i] < name1slice[j] })
+	slices.Sort(name1slice)
 	sort.Slice(name2slice, func(i, j int) bool { return name2slice[i] < name2slice[j] })
 	if string(name1slice) == string(name2slice) {
 		fmt.Println("true")

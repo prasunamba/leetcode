@@ -18,3 +18,14 @@ func WordCount() {
 	list := strings.Fields(name)
 	fmt.Println("list:", list, "length:", len(list))
 }
+func wordcountandfrequency() {
+	line := "Compares the first and last characters, then moves inward."
+	slice1 := strings.Fields(line)
+	fmt.Println("", len(slice1))
+	fmt.Println("", slice1)
+	map1 := make(map[string]int)
+	for _, word := range slice1 {
+		map1[word]++
+	}
+	fmt.Println("", map1)
+}

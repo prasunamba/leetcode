@@ -1,16 +1,10 @@
-package main
+package module1
 
 import (
 	"fmt"
 	"sort"
 )
 
-func main() {
-
-	nums := []string{"eat", "tea", "tan", "ate", "nat", "bat"}
-	result := groupAnagrams(nums)
-	fmt.Println("", result)
-}
 func sortstr(value string) string {
 	valuerune := []rune(value)
 	sort.Slice(valuerune, func(i, j int) bool {

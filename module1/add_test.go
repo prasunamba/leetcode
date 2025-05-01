@@ -9,3 +9,8 @@ func TestAdd(t *testing.T) {
 		t.Errorf("expected %d ,got %d", expected, result)
 	}
 }
+
+// Always ends with _test.go
+// Test function must start with Test
+
+// Test function must accept *testing.T as a parameter

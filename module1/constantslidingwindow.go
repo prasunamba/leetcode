@@ -2,7 +2,7 @@ package module1
 
 import "fmt"
 
-func Sum(nums []int, k int) int {
+func Sumconstant(nums []int, k int) int {
 	sum := 0
 	maxsum := 0
 	l := 0

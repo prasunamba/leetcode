@@ -1,6 +1,5 @@
 package module1
 
-/*
 import (
 	"fmt"
 )
@@ -14,11 +13,11 @@ type Listhead struct {
 	head *ListNode
 }
 
-func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	return nil
 }
 
-func (l1 *Listhead) printlink() {
+func (l1 *Listhead) Printlink() {
 	temp := l1.head
 	for temp != nil {
 		fmt.Print("->", temp.Val)
@@ -37,7 +36,8 @@ func (l1 *Listhead) Push(num int) {
 	}
 	temp.Next = node
 }
-func main() {
+
+/* func main() {
 	l1 := Listhead{}
 	l1.Push(5)
 	l1.Push(6)
@@ -49,19 +49,4 @@ func main() {
 	l2.Push(8)
 	l2.printlink()
 	addTwoNumbers(l1, l2)
-}
-
-func Matrixadd() {
-	dynmat := make([][]int, 3) // 3 rows
-	for i := range dynmat {
-		dynmat[i] = make([]int, 3) // 3 col for each row
-	}
-	fmt.Println("", dynmat)
-	for i := range dynmat {
-		num1 := []int{1, 2, 3}
-		dynmat[i] = num1
-
-	}
-	fmt.Println("", dynmat)
-}
-*/
+} */

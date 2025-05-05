@@ -2,34 +2,23 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
 func main() {
 
-	nums := []string{"eat", "tea", "tan", "ate", "nat", "bat"}
-	result := groupAnagrams(nums)
-	fmt.Println("", result)
-}
-func sortstr(value string) string {
-	valuerune := []rune(value)
-	sort.Slice(valuerune, func(i, j int) bool {
-		return valuerune[i] > valuerune[j]
-	})
-	fmt.Println("", valuerune)
-	return string(valuerune)
-}
-func groupAnagrams(strs []string) [][]string {
-	map1 := make(map[string][]string)
-	for idx, value := range strs {
-		fmt.Println("", idx, value)
-		sorted := sortstr(value)
-		map1[sorted] = append(map1[sorted], value)
+	// nums := []int{4, 2, 5, 7, 3}
+	for i := range 10 {
+
+		result := fib(i)
+		fmt.Print(" ", result)
 	}
-	fmt.Println("", map1)
-	result := [][]string{}
-	for _, val := range map1 {
-		result = append(result, val)
+}
+func fib(num int) int {
+	if num <= 0 {
+		return 0
+	} else if num == 1 {
+		return 1
+	} else {
+		return fib(num-1) + fib(num-2)
 	}
-	return result
 }

@@ -2,16 +2,14 @@ package main
 
 import (
 	"fmt"
-	"os"
-	"strconv"
 )
 
 func main() {
 
-	// nums := []int{4, 2, 5, 7, 3}
-	nums := os.Args[1]
-	num, _ := strconv.Atoi(nums)
-	for i := range num {
+	nums := []int{4, 2, 5, 7, 3}
+	// nums := os.Args[1]
+	// num, _ := strconv.Atoi(nums)
+	for i := range nums {
 
 		result := fib(i)
 		fmt.Print(" ", result)

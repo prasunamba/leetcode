@@ -10,8 +10,9 @@ func fact(i int) int {
 	}
 	return fact(i-1) * i
 }
-func Factorial(num int) {
+func Factorial(num int) int {
 
 	result := fact(num)
 	fmt.Println("result", result)
+	return result
 }

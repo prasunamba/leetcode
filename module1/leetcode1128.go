@@ -39,7 +39,7 @@ func NumEquivDominoPairs(dominoes [][]int) int {
 	for _, d := range dominoes {
 		a, b := d[0], d[1]
 		// Always store with smaller number first to handle [a,b] == [b,a]
-		key := min(a, b)*10 + max(a, b)
+		key := utils.Minm(a, b)*10 + utils.Maxm(a, b)
 		res += count[key]
 		fmt.Println("res", res, count)
 		count[key]++
@@ -48,16 +48,4 @@ func NumEquivDominoPairs(dominoes [][]int) int {
 	return res
 }
 
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-} */
+*/

@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-func goroutinescomm() {
+func Goroutinescomm() {
 	// Create channels for communication
 	dataChan := make(chan int)
 	resultChan := make(chan int)

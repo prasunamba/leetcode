@@ -1,14 +1,10 @@
 package module1
 
 import (
-	"fmt"
 	"sort"
 )
 
-func KthsmallestelementinaArray() {
-	nums := []int{2, 0, 11, 15}
+func KthsmallestelementinaArray(nums []int, k int) int {
 	sort.Ints(nums)
-	k := 3
-	fmt.Println("nums", nums)
-	fmt.Println("", nums[k-1])
+	return nums[k-1]
 }

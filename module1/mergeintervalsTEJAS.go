@@ -2,6 +2,7 @@ package module1
 
 import (
 	"fmt"
+	"golang/utils"
 	"sort"
 )
 
@@ -17,7 +18,7 @@ func Mergeintervals() {
 	last := result[len(result)-1]
 	for _, num := range intervals[1:] {
 		if last[1] > num[0] {
-			last[1] = max(num[1], last[1])
+			last[1] = utils.Maxm(num[1], last[1])
 
 		} else {
 			result = append(result, num)
@@ -26,10 +27,4 @@ func Mergeintervals() {
 
 	fmt.Println("", intervals, "\n", result)
 
-}
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }

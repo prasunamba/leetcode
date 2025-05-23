@@ -5,33 +5,24 @@ import (
 	"strings"
 )
 
-func First_Non_Repeating_Character() {
-	name := "yellow"
+func First_Non_Repeating_Character(name string) rune {
 	name = strings.ReplaceAll(name, " ", "")
 	runes := []rune(name)
-	map1 := make(map[rune]int)
-	var First_Non_Repeating_Character rune
-	for i, j := 0, len(runes)-1; i <= j; i, j = i+1, j-1 {
-		map1[runes[i]]++
-		if i != j {
-			map1[runes[j]]++
-		}
 
+	// Step 1: Count frequencies
+	freq := make(map[rune]int)
+	for _, ch := range runes {
+		freq[ch]++
 	}
-	set := false
-	for i, j := 0, len(runes)-1; i <= j; i, j = i+1, j-1 {
-		if map1[runes[i]] == 1 {
-			First_Non_Repeating_Character = runes[i]
-			set = true
-			if !set {
-				if i != j && map1[runes[j]] == 1 { // Check `j` only if different from `i`
-					First_Non_Repeating_Character = runes[j]
-					break
-				}
-			}
-			break
-		}
 
+	// Step 2: Find first character with frequency 1
+	for _, ch := range runes {
+		if freq[ch] == 1 {
+			fmt.Printf("First non-repeating character: %c\n", ch)
+			return ch
+		}
 	}
-	fmt.Printf(" main %c \n", First_Non_Repeating_Character)
+
+	fmt.Println("No non-repeating character found")
+	return ' '
 }

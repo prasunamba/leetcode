@@ -1,6 +1,9 @@
 package module1
 
-import "fmt"
+import (
+	"fmt"
+	"golang/utils"
+)
 
 func Tejasquestion() {
 	list := []int{8, 5, 7, 7, 8, 8, 10, 7, 7, 8, 8, 10}
@@ -42,18 +45,7 @@ func Interviewsolution1() {
 	}
 
 }
-func maxm(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-func minm(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}
+
 func Interviewsolution2() []int {
 	nums := []int{5, 7, 7, 8, 8, 10}
 	target := 8
@@ -62,19 +54,18 @@ func Interviewsolution2() []int {
 	// lastflag := false
 	// firstflag := false
 	for i, j := 0, len(nums)-1; i <= j; i, j = i+1, j-1 {
-		fmt.Println("", i, nums[i], j, nums[j], firstindex, lastindex)
 		if target == nums[i] {
 			if firstindex == -1 {
 				firstindex = i
 				// firstflag = true
 				fmt.Println("i", firstindex)
 			} else {
-				firstindex = minm(i, firstindex)
+				firstindex = utils.Minm(i, firstindex)
 			}
 			if lastindex == -1 {
 				lastindex = i
 			} else if i > lastindex {
-				lastindex = maxm(i, lastindex)
+				lastindex = utils.Maxm(i, lastindex)
 				fmt.Println("i last", lastindex)
 			}
 
@@ -85,22 +76,22 @@ func Interviewsolution2() []int {
 				// lastflag = true
 				fmt.Println("j", lastindex)
 			} else {
-				lastindex = maxm(j, lastindex)
+				lastindex = utils.Maxm(j, lastindex)
 			}
 			if firstindex == -1 {
 				fmt.Println("j -1", j)
 				firstindex = j
 			} else if j < firstindex {
-				firstindex = minm(j, firstindex)
+				firstindex = utils.Minm(j, firstindex)
 				fmt.Println("j first", firstindex)
 			}
 		}
 	}
 	if firstindex == -1 || lastindex == -1 {
 		if firstindex == -1 {
-			firstindex = maxm(firstindex, lastindex)
+			firstindex = utils.Maxm(firstindex, lastindex)
 		} else {
-			lastindex = maxm(firstindex, lastindex)
+			lastindex = utils.Maxm(firstindex, lastindex)
 		}
 	}
 	return []int{firstindex, lastindex}

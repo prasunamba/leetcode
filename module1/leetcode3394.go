@@ -2,6 +2,7 @@ package module1
 
 import (
 	"fmt"
+	"golang/utils"
 	"sort"
 )
 
@@ -26,7 +27,7 @@ func checkValidCuts(n int, rectangles [][]int) bool {
 	fmt.Println("yslice", yslice)
 	// fmt.Println("", count_non_overlap(xslice))
 	// fmt.Println("", count_non_overlap(yslice))
-	result := max(count_non_overlap(xslice), count_non_overlap(yslice))
+	result := utils.Maxm(count_non_overlap(xslice), count_non_overlap(yslice))
 	fmt.Println("finalresult", result)
 	return result >= 3
 }
@@ -38,7 +39,7 @@ func count_non_overlap(x [][]int) int {
 		last := result[len(result)-1]
 
 		if value[0] < last[1] { // Overlapping interval
-			result[len(result)-1][1] = max(last[1], value[1]) // Merge
+			result[len(result)-1][1] = utils.Maxm(last[1], value[1]) // Merge
 		} else { // Non-overlapping interval
 			result = append(result, value)
 			count++ // Increase section count

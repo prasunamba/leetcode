@@ -12,7 +12,7 @@ func BubbleSort(list []int) []int {
 	return list
 }
 
-func OptimizedBsort(slice []int) {
+func OptimizedBsort(slice []int) []int {
 	n := len(slice)
 	for i := 0; i < n-1; i++ {
 		swapped := false
@@ -26,6 +26,7 @@ func OptimizedBsort(slice []int) {
 			break
 		}
 	}
+	return slice
 }
 
 /* func main() {

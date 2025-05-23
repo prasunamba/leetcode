@@ -1,8 +1,11 @@
 package module1
 
-import "fmt"
+import (
+	"fmt"
+	"golang/utils"
+)
 
-func lengthOfLongestSubstring(s string) int {
+func LengthOfLongestSubstring(s string) int {
 	n := len(s)
 	longest := 0
 
@@ -14,14 +17,14 @@ func lengthOfLongestSubstring(s string) int {
 				break // Stop if a duplicate is found
 			}
 			charMap[s[j]] = true
-			longest = max(longest, j-i+1)
+			longest = utils.Maxm(longest, j-i+1)
 		}
 	}
 
 	return longest
 }
 
-func optimizedlengthOfLongestSubstring(s string) int {
+func OptimizedlengthOfLongestSubstring(s string) int {
 	charIndex := make(map[byte]int) // Stores last index of characters
 	left, maxLength := 0, 0
 
@@ -31,7 +34,7 @@ func optimizedlengthOfLongestSubstring(s string) int {
 		}
 
 		charIndex[s[right]] = right // Update last seen index
-		maxLength = max(maxLength, right-left+1)
+		maxLength = utils.Maxm(maxLength, right-left+1)
 	}
 
 	return maxLength

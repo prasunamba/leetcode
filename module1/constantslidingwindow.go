@@ -1,7 +1,12 @@
 package module1
 
-import "fmt"
+import (
+	"fmt"
+	"golang/utils"
+)
 
+// k- window size
+// max sum from a constant windowsize
 func Sumconstant(nums []int, k int) int {
 	sum := 0
 	maxsum := 0
@@ -17,7 +22,7 @@ func Sumconstant(nums []int, k int) int {
 		r++
 		sum += nums[r]
 		fmt.Println("nums[r],sum,maxsum", nums[r], sum, maxsum)
-		maxsum = max(sum, maxsum)
+		maxsum = utils.Maxm(sum, maxsum)
 	}
 	return maxsum
 }

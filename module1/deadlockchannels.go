@@ -20,7 +20,7 @@ fmt.Println("valeu",value)
 } */
 
 // no deadlock
-func deadlockc() {
+func Deadlockc() {
 
 	c := make(chan int) // unbuffered channel
 
@@ -29,6 +29,6 @@ func deadlockc() {
 		c <- 42
 	}()
 	value := <-c
-	fmt.Println("valeu", value)
+	fmt.Println("value", value)
 
 }

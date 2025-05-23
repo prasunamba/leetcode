@@ -5,8 +5,7 @@ import (
 	"strings"
 )
 
-func CharFrequency() {
-	name := "gnanaprasunamba"
+func CharFrequency(name string) {
 	name = strings.ReplaceAll(name, " ", "")
 	runemap := make(map[rune]int)
 	for _, char := range name {
@@ -16,10 +15,8 @@ func CharFrequency() {
 		fmt.Printf("'%c' : %d\n", char, count)
 	}
 }
-func CharFrequencyOptimized() {
-	name := "gnana prasunamba"
+func CharFrequencyOptimized(name string) {
 	name = strings.ReplaceAll(name, " ", "")
-	fmt.Println("name", name)
 	map1 := make(map[rune]int)
 	runes := []rune(name)
 	for i, j := 0, len(runes)-1; i <= j; i, j = i+1, j-1 {

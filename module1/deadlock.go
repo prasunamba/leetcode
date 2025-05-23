@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-func deadlock() {
+func Deadlock() {
 	var wg sync.WaitGroup
 	var mu1, mu2 sync.Mutex
 

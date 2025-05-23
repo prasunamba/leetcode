@@ -1,8 +1,12 @@
 package module1
 
-import "fmt"
+import (
+	"fmt"
+	"slices"
+)
 
 func BinarySearch(list []int, num int) int {
+	slices.Sort(list) // list should be sorted to apply binarysearch
 	low := 0
 	high := len(list) - 1
 	for low <= high {

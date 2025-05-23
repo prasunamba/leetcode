@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+/*
+f(0)=1
+f(num-1)*num
+*/
 func fact(i int) int {
 	if i < 2 {
 		return 1
@@ -13,6 +17,6 @@ func fact(i int) int {
 func Factorial(num int) int {
 
 	result := fact(num)
-	fmt.Println("result", result)
+	fmt.Printf("factorial of %d is %d\n ", num, result)
 	return result
 }

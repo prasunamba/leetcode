@@ -2,6 +2,11 @@ package module1
 
 import "fmt"
 
+/*
+f(0)=0
+f(1)=1
+f(num-1)+f(num-2)
+*/
 func FibonacciSeries(num int) int {
 	if num <= 0 {
 		return 0

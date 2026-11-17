@@ -11,5 +11,6 @@ func main() {
 	// num, _ := strconv.Atoi(nums)
 	fmt.Println("result")
 	module1.IndexofSubstring()
+	fmt.Println(module1.DigitSum("742190887044879874008", 20))
 
 }

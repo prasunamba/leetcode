@@ -14,7 +14,7 @@ func Minm(a, b int) int {
 }
 func Abs(a int) int {
 	if a < 0 {
-		return a
+		return -a
 	}
 	return a
 }

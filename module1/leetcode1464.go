@@ -1,0 +1,8 @@
+package module1
+
+import "sort"
+
+func MaxProduct(nums []int) int {
+	sort.Ints(nums)
+	return (nums[len(nums)-1] - 1) * (nums[len(nums)-2] - 1)
+}

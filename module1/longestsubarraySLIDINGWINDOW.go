@@ -1,6 +1,6 @@
 package module1
 
-import "golang/utils"
+import "main/utils"
 
 func LongestSubArraySlidingWindowBRUTEFORCE(nums []int, k int) int {
 	sum := 0

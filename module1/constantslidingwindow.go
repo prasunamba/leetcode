@@ -2,7 +2,7 @@ package module1
 
 import (
 	"fmt"
-	"golang/utils"
+	"main/utils"
 )
 
 // k- window size

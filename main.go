@@ -1,15 +1,15 @@
 package main
 
-import "golang/module1"
+import (
+	"fmt"
+	"sort"
+)
 
+func findKthLargest(nums []int, k int) int {
+	sort.Ints(nums)
+	fmt.Println(nums)
+	return nums[len(nums)-k]
+}
 func main() {
-
-	// nums := os.Args[1]
-	// num, _ := strconv.Atoi(nums)
-	// fmt.Println("result")
-	// module1.IndexofSubstring()
-	// fmt.Println(module1.DigitSum("742190887044879874008", 20))
-	// fmt.Println(module1.MinChanges("1100"))
-	module1.MoveZeroes([]int{0, 0, 1})
-
+	fmt.Println(findKthLargest([]int{3, 2, 1, 5, 6, 4}, 2))
 }

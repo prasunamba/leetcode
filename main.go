@@ -2,54 +2,24 @@ package main
 
 import (
 	"fmt"
-	"main/utils"
-	"math"
-	"sort"
+	"strconv"
 )
 
-func largestSumAfterKNegations(nums []int, k int) int {
-	sort.Ints(nums)
-
-	minus := 0
-	for _, value := range nums {
-		if value < 0 {
-			minus++
-		}
-	}
-
-	if k < minus {
-		for i := 0; i < k; i++ {
-			nums[i] *= -1
-		}
-	} else {
-		for i := 0; i < minus; i++ {
-			nums[i] *= -1
-			k--
-		}
-
-		if k%2 != 0 {
-			absmin := math.MaxInt
-			absindex := 0
-
-			for i, value := range nums {
-				if utils.Abs(value) < absmin {
-					absmin = utils.Abs(value)
-					absindex = i
-				}
-			}
-
-			nums[absindex] *= -1
-		}
-	}
+func alternateDigitSum(n int) int {
+	s := strconv.Itoa(n)
 
 	sum := 0
-	for _, value := range nums {
-		sum += value
+	sign := 1
+
+	for i := 0; i < len(s); i++ {
+		digit := int(s[i] - '0')
+		sum += digit * sign
+		sign *= -1
 	}
 
 	return sum
 }
 
 func main() {
-	fmt.Println("", largestSumAfterKNegations([]int{-8, 3, -5, -3, -5, -2}, 6))
+	fmt.Println("", alternateDigitSum(886996))
 }

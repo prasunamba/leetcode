@@ -1,4 +1,6 @@
-pcakage module1
+package module1
+
+import "fmt"
 
 func ReverseStr(s string, k int) string {
 	result := ""

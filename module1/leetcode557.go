@@ -1,4 +1,9 @@
-pcakage module1
+package module1
+
+import (
+	"fmt"
+	"strings"
+)
 
 func ReverseWords(s string) string {
 	words := strings.Fields(s)

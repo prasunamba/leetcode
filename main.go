@@ -2,24 +2,28 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
-func alternateDigitSum(n int) int {
-	s := strconv.Itoa(n)
+func totalMoney(n int) int {
+	total := 0
+	monday := 1
 
-	sum := 0
-	sign := 1
+	for n > 0 {
+		deposit := monday
 
-	for i := 0; i < len(s); i++ {
-		digit := int(s[i] - '0')
-		sum += digit * sign
-		sign *= -1
+		// Process one week (maximum 7 days)
+		for i := 0; i < 7 && n > 0; i++ {
+			total += deposit
+			deposit++
+			n--
+		}
+
+		monday++
 	}
 
-	return sum
+	return total
 }
 
 func main() {
-	fmt.Println("", alternateDigitSum(886996))
+	fmt.Println("", totalMoney(20))
 }

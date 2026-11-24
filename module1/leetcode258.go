@@ -22,3 +22,25 @@ func addDigits(num int) int {
 	}
 	return num
 }
+
+// -------------------------------------------------
+
+func addDigits2(num int) int {
+	flag := true
+	result := 0
+	for flag {
+		sum := 0
+		for num > 0 {
+			temp := num % 10
+			sum += temp
+			num /= 10
+		}
+		if sum < 10 {
+			flag = false
+		} else {
+			num = sum
+		}
+		result = sum
+	}
+	return result
+}

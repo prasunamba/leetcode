@@ -12,3 +12,14 @@ func SliceChunks() {
 	result = append(result, slice)
 	fmt.Println("", result)
 }
+
+func slicestring(s string, k int) string {
+	for i := 0; i < len(s); i = i + 2*k {
+		end := i + 4
+		if end > len(s) {
+			end = len(s)
+		}
+		fmt.Println("", s[i:end])
+	}
+	return ""
+}
